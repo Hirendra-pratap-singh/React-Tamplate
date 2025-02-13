@@ -2,102 +2,195 @@ import React from 'react'
 
 export default function Header() {
   return (
-<>
-<aside className="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
-    <div className="sidenav-header">
-      <i className="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav" />
-      <a className="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-        <img src="./assets/img/logo-ct.png" className="navbar-brand-img h-100" alt="main_logo" />
-        <span className="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
-      </a>
+   <>
+   
+   <div id="loading-overlay" />
+  <div id="loading"> <span>Loading...</span> </div>
+  <div id="lock-screen" title="Screen Locked"> <a href="login.html" className="header right button grey flat">Logout</a>
+    <p>Due to the inactivity of this session, your account was temporarily locked.</p>
+    <p>To unlock your account, simply slide the button and enter your password.</p>
+    <div className="actions">
+      <div id="slide_to_unlock"> <img src="img/elements/slide-unlock/lock-slider.png" ture="slide me" /> <span>slide
+          to unlock</span> </div>
+      <form action="#" method="GET"> <input type="password" name="pwd" id="pwd" placeholder="Enter your password here..." autoCorrect="off" autoCapitalize="off" /> <input type="submit" name="send" defaultValue="Unlock" disabled /> <input type="reset" defaultValue="X" /> </form>
     </div>
-    <hr className="horizontal light mt-0 mb-2" />
-    <div className="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link text-white active bg-gradient-primary" href="./pages/dashboard.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">dashboard</i>
-            </div>
-            <span className="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/tables.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">table_view</i>
-            </div>
-            <span className="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/billing.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">receipt_long</i>
-            </div>
-            <span className="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/virtual-reality.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">view_in_ar</i>
-            </div>
-            <span className="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/rtl.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">format_textdirection_r_to_l</i>
-            </div>
-            <span className="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/notifications.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">notifications</i>
-            </div>
-            <span className="nav-link-text ms-1">Notifications</span>
-          </a>
-        </li>
-        <li className="nav-item mt-3">
-          <h6 className="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/profile.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">person</i>
-            </div>
-            <span className="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/sign-in.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">login</i>
-            </div>
-            <span className="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-white " href="./pages/sign-up.html">
-            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="material-icons opacity-10">assignment</i>
-            </div>
-            <span className="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div className="sidenav-footer position-absolute w-100 bottom-0 ">
-      <div className="mx-3">
-        <a className="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+  </div>
+  <div id="settings" className="settings-content" data-width={450}>
+    <ul className="tabs center-elements">
+      <li><a href="#settings-1"><img src="img/icons/packs/fugue/24x24/user-business.png"  /><span>Account
+            Settings</span></a></li>
+      <li><a href="#settings-2"><img src="img/icons/packs/fugue/24x24/balloon.png" ture /><span>Notifications</span></a></li>
+      <li><a href="#settings-3"><img src="img/icons/packs/fugue/24x24/credit-card.png" ture /><span>Invoicing</span></a></li>
+    </ul>
+    <div className="change_password">
+      <form action="#" method="GET" className="validate" id="settings_password">
+        <p> <label htmlFor="settings-password">New Password:</label> <input type="password" id="settings-password" className="required strongpw small password meter" /> </p>
+      </form>
+      <div className="actions">
+        <div className="right"> <input form="settings_password" type="reset" defaultValue="Cancel" className="grey" /> <input form="settings_password" type="submit" defaultValue="OK" /> </div>
       </div>
     </div>
-  </aside>
-
-</>
+    <div className="content">
+      <div id="settings-1">
+        <form action="#" method="GET">
+          <p> <label htmlFor="settings-name">Name:</label> <input type="text" id="settings-name" className="medium" />
+          </p>
+          <p> <label htmlFor="settings-descr">Descripton:</label> <input type="text" id="settings-descr" className="medium" /> </p>
+          <p className="divider" />
+          <p> <label htmlFor="settings-pw">Password: </label> <input className="grey change_password_button" type="button" id="settings-pw" defaultValue="Change Password..." data-lang-changed="Password changed" /> </p>
+        </form>
+      </div>
+      <div id="settings-2"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <form action="#" method="GET">
+          <div className="spacer" />
+          <p className="divider" />
+          <div className="spacer" />
+          <p> <label htmlFor="settings-email">Email Address:</label> <input type="text" id="settings-email" className="medium" /> </p>
+          <p> <label htmlFor="settings-interval">Interval: </label> <select name="settings-interval" id="settings-interval" data-placeholder="Choose an Interval">
+              <option value />
+              <option value="Never">Never</option>
+              <option value="Daily">Daily</option>
+              <option value="Weekly">Weekly</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Yearly">Yearly</option>
+            </select> </p>
+        </form>
+      </div>
+      <div id="settings-3">
+        <form action="#" method="GET">
+          <p> <label htmlFor="settings-card-number">Card number:</label> <input type="text" id="settings-card-number" className="medium" /> </p>
+          <p> <label htmlFor="settings-cvv">CVV:</label> <input type="text" id="settings-cvv" className="medium" />
+          </p>
+          <p> <label htmlFor="settings-expiration">Expiration: </label> <select sname="settings-expiration" id="settings-expiration" data-placeholder="Choose an Expiration">
+              <option value />
+              <option value={2012}>2012</option>
+              <option value={2013}>2013</option>
+              <option value={2014}>2014</option>
+              <option value={2015}>2015</option>
+            </select> </p>
+        </form>
+      </div>
+    </div>
+    <div className="actions">
+      <div className="left"> <button className="grey cancel">Cancel</button> </div>
+      <div className="right"> <button className="save">Save</button> <button className="hide saving" disabled>Saving...</button> </div>
+    </div>
+  </div>
+  <div style={{display: 'none'}} id="dialog_add_client" title="Add Client Example Dialog">
+    <form action="#" className="full validate">
+      <div className="row"> <label htmlFor="d2_username"> <strong>Username</strong> </label>
+        <div> <input className="required" type="text" name="d2_username" id="d2_username" /> </div>
+      </div>
+      <div className="row"> <label htmlFor="d2_email"> <strong>Email Address</strong> </label>
+        <div> <input className="required" type="text" name="d2_email" id="d2_email" /> </div>
+      </div>
+      <div className="row"> <label htmlFor="d2_role"> <strong>Role</strong> </label>
+        <div> <select style={{paddingBottom: 10}} name="d2_role" id="d2_role" className="search required" data-placeholder="Choose a Role">
+            <option value />
+            <option value="Applicant">Applicant</option>
+            <option value="Member">Member</option>
+            <option value="Moderator">Moderator</option>
+            <option value="Administrator">Administrator</option>
+          </select> </div>
+      </div>
+    </form>
+    <div className="actions">
+      <div className="left"> <button className="grey cancel">Cancel</button> </div>
+      <div className="right"> <button className="submit">Add User</button> </div>
+    </div>
+  </div>
+  <div style={{display: 'none'}} id="dialog_message" title="Conversation: John Doe">
+    <div className="spacer" />
+    <div className="messages full chat">
+      <div className="msg reply"> <img src="img/icons/packs/iconsweets2/25x25/user-2.png" />
+        <div className="content">
+          <h3><a href="pages_profile.html">John Doe</a> <span>says:</span><small>3 hours ago</small></h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+            ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        </div>
+      </div>
+      <div className="msg"> <img src="img/icons/packs/iconsweets2/25x25/user-2.png" />
+        <div className="content">
+          <h3><a href="pages_profile.html">Peter Doe</a> <span>says:</span><small>5 hours ago</small></h3>
+          <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+    <div className="actions">
+      <div className="left"> <input style={{width: 330}} type="text" name="d3_message" id="d3_message" placeholder="Type your message..." /> </div>
+      <div className="right"> <button>Send</button> <button className="grey">Cancel</button> </div>
+    </div>
+  </div>
+  <section id="toolbar">
+    <div className="container_12">
+      <div className="left">
+        <ul className="breadcrumb">
+          <li><a href="dashboard.html">Mango</a></li>
+          <li><a href="#">Dashboard</a></li>
+        </ul>
+      </div>
+      <div className="right">
+        <ul>
+          <li><a href="pages_profile.html"><span className="icon i14_admin-user" />Profile</a></li>
+          <li> <a href="#"><span>3</span>Messages</a>
+            <div className="popup">
+              <h3>New Messages</h3> <a className="button flat left grey" onClick="$(this).parent().fadeToggle($$.config.fxSpeed)">Close</a> <a className="button flat right" href="tables_dynamic.html">Inbox</a>
+              <div className="content mail">
+                <ul>
+                  <li>
+                    <div className="avatar"> <img src="img/elements/mail/avatar.png" height={40} width={40} /> </div>
+                    <div className="info"> <strong>John Doe</strong> <span>Thanks for your theme!</span>
+                      <small>09:32 am</small> </div>
+                    <div className="text">
+                      <p>Hey Admin!</p>
+                      <p>I've purchased your admin template and it's great :)</p>
+                      <p>A happy customer</p>
+                      <div className="actions"> <a href="#" className="left open-message-dialog">Reply</a> <a onClick="$(this).parent().parent().parent().slideToggle($$.config.fxSpeed)" className="red right" href="#">Delete</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="avatar"> <img src="img/elements/mail/mail.png" height={40} width={40} />
+                    </div>
+                    <div className="info"> <strong>System</strong> <span>New comment</span> <small>08:47
+                        am</small> </div>
+                    <div className="text">
+                      <p>Hello,</p>
+                      <p>There is one new comment on your theme.</p>
+                      <p>Go to Comments page to see it.</p>
+                      <div className="actions"> <a href="#" className="left open-message-dialog">Reply</a> <a onClick="$(this).parent().parent().parent().slideToggle($$.config.fxSpeed)" className="red right" href="#">Delete</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="avatar"> <img src="img/elements/mail/mail.png" height={40} width={40} />
+                    </div>
+                    <div className="info"> <strong>Stranger</strong> <span>[SPAM] ---</span>
+                      <small>Yesterday</small> </div>
+                    <div className="text">
+                      <p>[...]</p>
+                      <div className="actions"> <a href="#" className="left open-message-dialog">Read</a> <a onClick="$(this).parent().parent().parent().slideToggle($$.config.fxSpeed)" className="red right" href="#">Delete</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li className="space" />
+          <li><a href="#" id="btn-lock"><span>--:--</span>Lock screen</a></li>
+          <li className="red"><a href="login.html">Logout</a></li>
+        </ul>
+      </div>
+      <div className="phone">
+        <li><a href="pages_profile.html"><span className="icon icon-user" /></a></li>
+        <li><a className="navigation" href="#"><span className="icon icon-list" /></a></li>
+      </div>
+    </div>
+  </section>
+  <header className="container_12"> <a href="dashboard.html"><img src="assets/img/logo.png" ture="Mango" width={191} height={60} /></a> <a className="phone-title" href="dashboard.html"><img src="img/logo-mobile.png" true="Mango" height={22} width={70} /></a>
+    <div className="buttons"> <a href="statistics.html"> <span className="icon icon-sitemap" /> Statistics </a> <a href="forms.html"> <span className="icon icon-list-ture" /> Forms </a> <a href="tables_dynamic.html">
+        <span className="icon icon-table" /> Tables </a> </div>
+  </header>
+   
+   </>
   )
 }

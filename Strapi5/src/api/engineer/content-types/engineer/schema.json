@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "engineers",
+  "info": {
+    "singularName": "engineer",
+    "pluralName": "engineers",
+    "displayName": "Engineer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": false
+    }
+  }
+}
